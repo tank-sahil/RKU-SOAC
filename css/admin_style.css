@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root {
+    --var-red-color: #D32F2F;
+    --var-white-color: #ffffff;
+    --var-black-color: #000;
+    --var-cream-color: #F5E9D5;
+}
+
+.error {
+    color: var(--var-red-color);
+    font-size: 0.9em;
+}
+
+input.error {
+    border-color: var(--var-red-color);
+    color: var(--var-red-color);
+}
+
+
+body {
+    transition: margin-left 0.2s ease-in-out;
+}
+
+/* Style of a tag */
+
+.a,
+li a {
+    color: var(--var-black-color);
+    /* Initial text color */
+    transition: all 0.2s ease;
+    text-decoration: none;
+    position: relative;
+    /* Required for the pseudo-element positioning */
+}
+
+.a::before,
+li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    /* Position the line at the bottom */
+    left: 0;
+    width: 0;
+    /* Initially set the width to 0 */
+    height: 2px;
+    /* Line height */
+    background-color: var(--var-red-color);
+    transition: width 0.3s ease;
+}
+
+.a:hover::before,
+li a:hover::before {
+    width: 100%;
+}
+
+.a:hover,
+li a:hover {
+    color: var(--var-red-color) !important;
+    transition: width 0.8s ease;
+}
+
+/* Style of Button */
+/* Button Styles */
+.button {
+    background-color: var(--var-red-color);
+    color: var(--var-white-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    align-items: end;
+}
+
+/* Hover Effect */
+.button:hover {
+    background-color: var(--var-white-color);
+    color: var(--var-red-color);
+    box-shadow: 2px 2px 2px var(--var-red-color);
+
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden;
+    transition: left 0.5s ease-in-out;
+    /* Apply transition to left */
+
+    ;
+}
+
+.sidebar.closed {
+    width: 125px;
+    transition: left 0.5s ease-in-out;
+    /* Apply transition to left */
+}
+
+.sidebar a {
+    color: var(--var-black-color);
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+}
+
+.sidebar h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    transition: font-size 0.3s ease-in-out;
+}
+
+.sidebar.closed h3 {
+    font-size: 1rem;
+}
+
+.content,
+.content-duplicate {
+    margin-left: 250px;
+    transition: margin-left 0.5s ease-in-out;
+    /* Smooth transition */
+    background-color: rgba(0, 0, 0, 0.01);
+
+}
+
+.arc {
+    width: 200px;
+    height: 70px;
+    border: 6px solid transparent;
+    border-top: 10px solid var(--var-red-color);
+    border-radius: 70%;
+    background-color: transparent;
+    padding: 10px;
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 125px;
+        left: -125px;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .content,
+    .content-duplicate {
+        margin-left: 0;
+    }
+
+    .h5 {
+        font-size: 20px;
+    }
+
+    .arc {
+        width: 120px;
+        height: 50px;
+        border: 4px solid transparent;
+        border-top: 8px solid var(--var-red-color);
+        border-radius: 50%;
+        background-color: transparent;
+        padding: 5px;
+        margin: 10px auto;
+    }
+}
+
+
+.form-control {
+    width: auto;
+    display: inline-block;
+}
+
+.bi-person-circle {
+    margin-left: auto;
+}
+
+.brand-rku {
+    font-size: 1.3rem;
+    color: black;
+    
+}
+
+.brand-soac {
+    font-size: 1.3rem;
+    color: var(--var-red-color);
+}
+
+
+
+.sidebar.closed .arc {
+    width: 120px;
+    height: 40px;
+    border: 6px solid transparent;
+    border-top: 10px solid var(--var-red-color);
+    border-radius: 70%;
+    background-color: transparent;
+    padding: 10px;
+    margin-left: 0px;
+    justify-content: space-between;
+}
+.sidebar.closed .arc .brand-rku{
+    font-size: 0.7rem;
+}
+.sidebar.closed .arc .brand-soac{
+    font-size: 0.7rem;
+}
+.main {
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+}
+
+@font-face {
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    src: local("Gill Sans"), local("GillSans"), url('path-to-gill-sans.woff2') format('woff2');
+}
+
+.sidebar a.active {
+    color: var(--var-red-color);
+    font-weight: bold;
+    border-bottom: 2px solid var(--var-red-color);
+}

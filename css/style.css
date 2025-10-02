@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root {
+    --var-red-color: #D32F2F;
+    --var-white-color: #ffffff;
+    --var-black-color: #000;
+    --var-cream-color: #F5E9D5;
+}
+
+.error {
+    color: var(--var-red-color);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.arc {
+    width: 200px;
+    height: 70px;
+    border: 6px solid transparent;
+    border-top: 10px solid var(--var-red-color);
+    border-radius: 70%;
+    background-color: transparent;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.brand-rku {
+    color: var(--var-black-color);
+}
+
+.brand-soac {
+    color: var(--var-red-color);
+}
+
+
+/* /* Hover effect for all cards */
+.card {
+    transition: all 0.3s ease;
+    box-shadow: 0.3s ease;
+    transition: 0.60s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: 0.60s ease-in-out;
+}
+
+.navbar-brandc,
+.card a {
+    text-decoration: none;
+}
+
+/* Enable dropdown open on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    /* Optional for alignment */
+    transition: all 5s ease-out;
+}
+
+/* Default link style */
+.navbar-nav .nav-link {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--var-red-color);
+    position: relative;
+    text-decoration: none;
+}
+
+.navbar-nav .nav-link.active::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--var-red-color);
+    transition: width 0.5s ease-out, right 0.5s ease-out;
+}
+
+.navbar-nav .nav-link.active::before {
+    width: 100%;
+    right: auto;
+    left: 0;
+}
+
+/* Hover effect for nav-links */
+.navbar-nav .nav-link:hover {
+    color: var(--var-red-color);
+}
+
+/* Active link hover effect */
+.navbar-nav .nav-link.active:hover {
+    color: var(--var-red-color);
+}
+
+.a,
+li a {
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.a::before,
+li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--var-red-color);
+    transition: width 0.5s ease-out, right 0.5s ease-out;
+}
+
+.a:hover::before,
+li a:hover::before {
+    width: 100%;
+    right: auto;
+    left: 0;
+    /* Moves the animation from right to left */
+}
+
+
+
+.a:hover,
+li a:hover {
+    color: var(--var-red-color) !important;
+    transition: color 0.3s ease-in-out;
+}
+
+
+/* Button Styles */
+.button {
+    background-color: var(--var-red-color);
+    color: var(--var-white-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    align-items: end;
+}
+
+/* Hover Effect */
+.button:hover {
+    background-color: var(--var-white-color);
+    color: var(--var-red-color);
+    box-shadow: 2px 2px 2px var(--var-red-color);
+
+}
+
+/* Button Styles */
+a .btn {
+    background-color: var(--var-red-color);
+    color: var(--var-white-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect */
+a .btn:hover {
+    background-color: var(--var-white-color);
+    color: var(--var-red-color);
+    box-shadow: 2px 2px 2px var(--var-red-color);
+
+}
+
+
+
+.footer {
+    background-color: var(--var-cream-color);
+}
+
+.main {
+    background-color: var(--var-cream-color);
+    border-radius: 50px;
+}
+
+
+/* Spinner Loader */
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--var-white-color);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    width: 80px;
+    height: 80px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top: 5px solid var(--var-red-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+body.loaded .loader-wrapper {
+    display: none;
+}
+
+.item {
+    color: #000;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    position: relative;
+}
+
+/* For the entire body (applies to the main page content) */
+body::-webkit-scrollbar {
+    width: 12px;
+    /* Width of the vertical scrollbar */
+    height: 12px;
+    /* Height of the horizontal scrollbar */
+}
+
+/* Style the thumb (the draggable part of the scrollbar) */
+body::-webkit-scrollbar-thumb {
+    background-color: var(--var-red-color);
+    /* Change the color of the thumb */
+    /* Optional rounded corners for the thumb */
+}
+
+/* Style the track (background of the scrollbar) */
+body::-webkit-scrollbar-track {
+    background-color: var(--var-white-color);
+    /* Change the color of the track */
+}
+
+/* BLOGS */
+
+.img-box {
+    background-color: white;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.img-box img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    height: auto;
+    max-height: 100px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.img-box:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.img-box:hover .overlay {
+    opacity: 1;
+}
+
+.modal-body img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    border-radius: 10px;
+}
